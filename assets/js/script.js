@@ -25,14 +25,15 @@ var answerbuttonsEl = document.getElementById("answer-btn");
 // Question
 var questionEl = document.getElementById("questions");
 var timerEl = document.querySelector("#timer");
-var timeleft = 100;
+var timeleft;
+timerEl.innerText = 0;
 var score = 0;
 
 // Highscore
 var HighScores = [];
 
 // Array for Questions 
-var arrayShuffledQuestions;
+var arrayQuestions;
 var QuestionIndex = 0;
 
 // Gameover Variable
@@ -71,7 +72,7 @@ var questions = [
     },
   ];
 
-  var renderStartPage = function () {
+var renderStartPage = function () {
     highscoreContainerEl.classList.add("hide");
     highscoreContainerEl.classList.remove("show");
     startContainerEl.classList.remove("hide");
@@ -91,3 +92,46 @@ var questions = [
         wrongEl.classList.add("hide");
     }
 };
+
+var timeStart = function () {
+    timeleft = 60;
+
+    var checkTime = setInterval(function() {
+    timerEl.innerText = timeleft;
+    timeleft--;
+
+    if (gameover) {
+        clearInterval(timercheck);
+    }
+   
+    if (timeleft < 0) {
+        showScore()
+        timerEl.innerText = 0;
+        clearInterval(timercheck);
+    }
+
+    }, 1000)
+};
+
+var setQuestion = function() {
+    displayQuestion(arrayShuffledQuestions[QuestionIndex]);
+}
+
+var startGame = function() {
+    startContainerEl.classList.add('hide');
+    startContainerEl.classList.remove('show');
+    questionContainerEl.classList.remove('hide');
+    questionContainerEl.classList.add('show');
+    // Using this method for questions to show up in random order
+    arrayQuestions = questions.sort(() => Math.random() - 0.5);
+    timeStart();
+    setQuestion();
+  };
+
+  // Event Listeners
+
+  //on start click, start game
+  startBtnEl.addEventListener("click", startGame);
+  //on submit button -- enter or click
+  initials.addEventListener("submit", createHighScore);
+

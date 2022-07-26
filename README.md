@@ -11,6 +11,7 @@ USER will click start game
 GAME will start
 - Initial screen will be hidden and first question will pop up & time will start ticking down 1 second at a time
 - USER will answer question to the best of their ability choosing from a multiple choice of 4 answers
+- IF user answers question wrongly, time will be deducted and reduce their "score"
 - USER will continue to keep answering questions until he has answered all questions 
 - ONCE user has completed answering all the questions
 - USERS score will be the time left remaining 

@@ -70,3 +70,24 @@ var questions = [
       choices: [{choice: '1. src'}, {choice: '2. href'}, {choice: '3. link'}, {choice: '4. head'}]
     },
   ];
+
+  var renderStartPage = function () {
+    highscoreContainerEl.classList.add("hide");
+    highscoreContainerEl.classList.remove("show");
+    startContainerEl.classList.remove("hide");
+    startContainerEl.classList.add("show");
+    scoreContainerEl.removeChild(scoreContainerEl.lastChild);
+    QuestionIndex = 0;
+    gameover = "";
+    timerEl.textContent = 0; 
+    score = 0;
+
+    if (correctEl.className = "show") {
+        correctEl.classList.remove("show");
+        correctEl.classList.add("hide");
+    }
+    if (wrongEl.className = "show") {
+        wrongEl.classList.remove("show");
+        wrongEl.classList.add("hide");
+    }
+};

@@ -155,6 +155,13 @@ p {
     margin: 10px 0;
 }
 
+.answerbtn {
+    width: 50%;
+    text-align: left;
+    font-size: 3.0vw;
+}
+
+
 /* /Buttons */
 
 /* Styles for Correct/Wrong */
@@ -183,10 +190,3 @@ li {
     font-size: 4vw;
 }
 
-/* Creating this class within JS */
-
-.answerbtn {
-    width: 50%;
-    text-align: left;
-    font-size: 3.0vw;
-}

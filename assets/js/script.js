@@ -20,7 +20,7 @@ var listHighScoreEl = document.getElementById("highscore-list");
 var startBtnEl = document.querySelector("#start-game");
 var backBtnEl = document.querySelector("#back-btn");
 var clearBtnEl = document.querySelector("#clear-highscores");
-var answerbuttonsEl = document.getElementById("answer-btn");
+var answerBtnEl = document.getElementById("answer-btn");
 
 // Question
 var questionEl = document.getElementById("questions");
@@ -58,9 +58,9 @@ var questions = [
       a: '4. var potato', 
       choices: [{choice: '1. declare potato'}, {choice: '2. potato'}, {choice: '3. potato is'}, {choice: '4. var potato'}]
     },
-    { q: 'When did JavaScript first appear?', 
-      a: '1. 1995', 
-      choices: [{choice: '1. 1995'}, {choice: '2. 1998'}, {choice: '3. 2001'}, {choice: '4. 2000'}]
+    { q: 'When example allows you to link a JavaScript file to your HTML?', 
+      a: '1. <script src="">', 
+      choices: [{choice: '1. <script src="">'}, {choice: '2. <script href="">'}, {choice: '3. <link src="">'}, {choice: '4. <link href="">'}]
     },
     { q: 'What does DOM stand for?', 
       a: '1. Document Object Model', 
@@ -113,9 +113,8 @@ var timeStart = function () {
     }, 1000)
 };
 
-var setQuestion = function() {
-    displayQuestion(arrayShuffledQuestions[QuestionIndex]);
-}
+
+
 
 var startGame = function() {
     startContainerEl.classList.add('hide');
@@ -126,12 +125,36 @@ var startGame = function() {
     arrayQuestions = questions.sort(() => Math.random() - 0.5);
     timeStart();
     setQuestion();
-  };
+};
 
-  // Event Listeners
+var setQuestion = function() {
+    resetAnswers();
+    displayQuestion(arrayShuffledQuestions[QuestionIndex]);
+};
 
-  //on start click, start game
-  startBtnEl.addEventListener("click", startGame);
-  //on submit button -- enter or click
-  initials.addEventListener("submit", createHighScore);
+var resetAnswers = function() {
+    while (answerBtnEl.firstChild) {
+        answerBtnEl.removeChild(answerBtnEl.firstChild);
+    };
+};
+
+var displayQuestion = function(index) {
+    questionEl.innerText = index.q
+    for (var i = 0; i < index.choices.length; i++) {
+        var answerBtn = document.createElement('button');
+        answerBtn.innerText = index.choices[i].choice;
+        answerBtn.classList.add('btn');
+        answerBtn.classList.add('answerbtn');
+        answerBtn.addEventListener("click", answerCheck);
+        answerBtnEl.appendChild(answerbutton);
+    }
+};
+
+
+// Event Listeners
+
+//on start click, start game
+startBtnEl.addEventListener("click", startGame);
+//on submit button -- enter or click
+initials.addEventListener("submit", createHighScore);
 

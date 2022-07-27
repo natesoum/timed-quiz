@@ -26,7 +26,6 @@ var answerBtnEl = document.getElementById("answer-btn");
 var questionEl = document.getElementById("questions");
 var timerEl = document.querySelector("#timer");
 var timeleft;
-timerEl.innerText = 0;
 var score = 0;
 
 // Highscore
@@ -113,9 +112,6 @@ var timeStart = function () {
     }, 1000)
 };
 
-
-
-
 var startGame = function() {
     startContainerEl.classList.add('hide');
     startContainerEl.classList.remove('show');
@@ -129,7 +125,7 @@ var startGame = function() {
 
 var setQuestion = function() {
     resetAnswers();
-    displayQuestion(arrayShuffledQuestions[QuestionIndex]);
+    displayQuestion(arrayQuestions[QuestionIndex]);
 };
 
 var resetAnswers = function() {
@@ -149,6 +145,8 @@ var displayQuestion = function(index) {
         answerBtnEl.appendChild(answerbutton);
     }
 };
+
+
 
 
 // Event Listeners

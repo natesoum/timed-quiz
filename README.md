@@ -1,31 +1,63 @@
-# timed-quiz
+# Timed Coding Quiz
 
-## Mock Up
+ 
 
-## Objective
+  ## Table-of-Contents
 
-I am creating a timed quiz website for users who would like to test their knowledge! 
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Description](#description)
+  * [Credits](#credits)
+  * [License](#license)
+  * [Contributions](#contributions)
+  * [Test](#test)
+  * [Questions](#questions)
 
-USER will click start game
+  ## Mock-up
 
-GAME will start
-- Initial screen will be hidden and first question will pop up & time will start ticking down 1 second at a time
-- USER will answer question to the best of their ability choosing from a multiple choice of 4 answers
-- IF user answers question wrongly, time will be deducted and reduce their "score"
-- USER will continue to keep answering questions until he has answered all questions 
-- ONCE user has completed answering all the questions
-- USERS score will be the time left remaining 
-- USER will save their score with their initial
-- ONCE user has submitted their initials, SCORE will be saved into local storage
+  ![Mock-up](./assets/images/mock-up1.jpg)
+  ![Mock-up](./assets/images/mock-up2.jpg)
+  ![Mock-up](./assets/images/mock-up3.jpg)
+ 
 
-REFRESHING the page
-- Since we are saving the user's score in local storage, the user will be able to see their score by clicking on the "View High Scores" on the top left of the webpage
-- USERS will see previous scores ranked in highest to lowest
-- USERS will have the option to go back and play again if they would like
+  ## Description
 
-## Description
+  My motivation for this project was to improve on my first take of this project! During my first approach, I wasn't able to give this project a good attempt. Then, I decided to slowly look at the challenge and take a new approach to it. So, I started from scratch again and finally was able to give more effort on this attempt of the coding quiz! 
 
-## Contributors 
+  I built this project to improve my web development skills all together.
 
-## Deployed Page
+  This app creates a game for users to test their knowledge on  all things web devlelopment while having fun doing so! 
 
+  I learned HTML organization, how important file structure is, website responsive and much more form building this project! 
+
+  ## Installation
+
+  Visit it in the deployed link below! 
+
+  ## Usage
+
+  If your on the homepage, press Start Game and test your knowledge! 
+
+  ## Credits
+
+  
+
+  ## License
+
+  no license
+
+  ## Contributions
+
+  Not accepting contributions at this time, thank you! 
+
+  ## Test
+
+  Visit the deployed link to test application, thank you! 
+
+  ## Questions
+
+  Please contact me using the following links:
+
+  [GitHub](https://github.com/natesoum)
+
+  [Email: nathunsoum@gmail.com](mailto:nathunsoum@gmail.com)
